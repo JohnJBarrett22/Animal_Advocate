@@ -1,0 +1,34 @@
+a {
+    color: white;
+    font-weight: bold;
+    margin-top: .75rem;
+}
+a:hover { 
+    color: #f57c00;
+}
+p {
+    text-align: center;
+    color: white;
+}
+#myNav {
+    height: 4rem;
+    background-color: #ce93d8;
+}
+
+#logo {
+    margin-top: -4rem;
+    width: 12rem;
+    height: 10rem;
+}
+#myFooter {
+    height: 4rem;
+    background-color: #ce93d8;
+}
+
+/* #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+} */
