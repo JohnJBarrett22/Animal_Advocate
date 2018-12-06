@@ -19,7 +19,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Pet Name</label>
-              <input type="text" class="form-control" id="validationServer01" name="newPet.petName" [(ngModel)]="newPet.petName" required>
+              <input type="text" class="form-control" id="validationServer01" name="newPet.petName" [(ngModel)]="newPet.petName" required minlength="3" #petName="ngModel">
+              <span class="warning" *ngIf="newPet.petName.length < 3">Pet name must be a minimum of 3 characters.</span>
               <div class="valid-feedback">
                 Please provide a valid pet name.
               </div>
@@ -54,7 +55,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer03">Type</label>
-              <select class="form-control" id="exampleFormControlSelect1" name="newPet.petType" [(ngModel)]="newPet.petType">
+              <select class="form-control" id="exampleFormControlSelect1" name="newPet.petType" [(ngModel)]="newPet.petType" required #petType="ngModel">
+                <span class="warning" *ngIf="!newPet.petType">Pet type is required.</span>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
               </select>
@@ -117,7 +119,8 @@
             </div>
             <div class="col-md-12 mb-3">
               <label for="validationServer04">Pet Picture Link</label>
-              <input type="text" class="form-control" id="validationServer04" name="newPet.petPictureLink" [(ngModel)]="newPet.petPictureLink" required>
+              <input type="text" class="form-control" id="validationServer04" name="newPet.petPictureLink" [(ngModel)]="newPet.petPictureLink" required minlength="3" #petPictureLink="ngModel">
+              <span class="warning" *ngIf="!newPet.petPictureLink">Pet picture link is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet picture link.
               </div>

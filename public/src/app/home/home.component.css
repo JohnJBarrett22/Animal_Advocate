@@ -6,6 +6,9 @@ a:hover {
     text-decoration: none;
     color: #f57c00;
 }
+#myVid {
+    height: 10rem;
+}
 #myPetName {
     font-weight: bold;
 }
@@ -22,3 +25,11 @@ a:hover {
 .card-text {
     text-align: center;    
 }
+/* 
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 100%; 
+    max-height: 0%;
+} */
