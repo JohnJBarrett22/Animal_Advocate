@@ -108,20 +108,21 @@ module.exports = {
 
     login: function(req, res){
         console.log("~Controller: login() initialized~");
-        console.log(req.body.password);
         User.findOne({email: req.body.email}, function(err, foundUser){
-            console.log(req.body.email);
-            console.log(foundUser);
             if(foundUser){
                 bcrypt.compare(req.body.password, foundUser.password, function(err, result){
-                    if(err){
-                        res.json(err);
-                    }else{
+                    console.log("Result", result)
+                    if(result == true){
                         res.json({message: "Success!", found: true});
+                        console.log("id", foundUser.id)
                         req.session.userId = foundUser.id;
-                        console.log(req.session);
+                        console.log("SESSION", req.session);
+                    }else{
+                        res.json({message: "Invalid login credentials!"});
                     }
                 })
+            }else{
+                res.json({message: "Invalid login credentials!"});
             }
         })
     }

@@ -84,7 +84,7 @@
           <!-- Row #5 -->
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+              <input class="form-check-input" type="checkbox" value="agree" id="invalidCheck3" required>
               <label class="form-check-label" for="invalidCheck3">
                 Agree to terms and conditions
               </label>
@@ -100,10 +100,10 @@
       <div class="col"></div>
     </div>
 
-
     <div class="row">
       <div class="col"></div>
       <div id="form2" class="col-6">
+        {{user | json }}
         <form (submit)="login()">
           <!-- Row #3 -->
           <div class="form-row">

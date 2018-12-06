@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
           console.log(data["errors"][key]["message"]);
           this.errors.push(data["errors"][key]["message"]);
         }
-      }else if(data["message"] == "Duplicate pets not allowed!"){
+      }else if(data["message"] == "Invalid login credentials!"){
         this.errors.push(data["message"]);
       }else{
         console.log("~Component: addUser() successful~")
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           console.log(data["errors"][key]["message"]);
           this.errors.push(data["errors"][key]["message"]);
         }
-      }else if(data["message"] == "Duplicate pets not allowed!"){
+      }else if(data["message"] == "Invalid login credentials!"){
         this.errors.push(data["message"]);
       }else{
         console.log("~Component: login() successful~")
