@@ -18,7 +18,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">First Name</label>
-              <input type="text" class="form-control" id="validationServer01" name="newUser.firstName" [(ngModel)]="newUser.firstName" required>
+              <input type="text" class="form-control" id="validationServer01" name="newUser.firstName" [(ngModel)]="newUser.firstName" required minlength="3" #firstName="ngModel">
+              <span class="warning" *ngIf="newUser.firstName.length < 3">First name must be a minimum of 3 characters.</span>
               <div class="valid-feedback">
                 Please provide a valid first name.
               </div>
@@ -29,7 +30,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Last Name</label>
-              <input type="text" class="form-control" id="validationServer02" name="newUser.lastName" [(ngModel)]="newUser.lastName" required>
+              <input type="text" class="form-control" id="validationServer02" name="newUser.lastName" [(ngModel)]="newUser.lastName" required minlength="3" #lastName="ngModel">
+              <span class="warning" *ngIf="newUser.lastName.length < 3">Last name must be a minimum of 3 characters.</span>
               <div class="valid-feedback">
                 Please provide a valid last name.
               </div>
@@ -40,7 +42,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Email</label>
-              <input type="text" class="form-control" id="validationServer03" name="newUser.email" [(ngModel)]="newUser.email" required>
+              <input type="text" class="form-control" id="validationServer03" name="newUser.email" [(ngModel)]="newUser.email" required minlength="9" #email="ngModel">
+              <span class="warning" *ngIf="newUser.email.length < 9">Email must be a minimum of 9 characters.</span>
               <div class="valid-feedback">
                 Please provide a valid email.
               </div>
@@ -59,7 +62,8 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Password</label>
-              <input type="text" class="form-control" id="validationServer05" name="newUser.password" [(ngModel)]="newUser.password" required>
+              <input type="text" class="form-control" id="validationServer05" name="newUser.password" [(ngModel)]="newUser.password" required minlength="8" #password="ngModel">
+              <span class="warning" *ngIf="newUser.password.length < 8">Password must be a minimum of 8 characters.</span>
               <div class="valid-feedback">
                 Please provide a valid password.
               </div>
