@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="card myCard col-3"  *ngFor="let p of allPets">
+    <div class="card myCard col-sm"  *ngFor="let p of allPets">
       <a [routerLink]="['/pets', p._id]">
       <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Card image cap">
       <div class="card-body">

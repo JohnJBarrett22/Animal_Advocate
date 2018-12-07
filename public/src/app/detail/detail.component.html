@@ -8,16 +8,20 @@
   <title>Animal Advocate</title>
 </head>
 <body *ngIf="singlePet">
-  <div>
-    <div >
-      <h1>{{singlePet.petName}}</h1>
-      <h4>{{singlePet.petType}} - {{singlePet.petBreed}}</h4>
-      <h5>Characteristics: {{singlePet.petCharacteristics}}</h5>
-      <h5>Coat Length: {{singlePet.petCoatLength}}</h5>
-      <h5>House-Trained: {{singlePet.petHouseTrained}}</h5>
-    </div>
-    <div class="col l6">
-      <img [src]="singlePet.petPictureLink">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <h1>{{singlePet.petName}}</h1>
+        <h4>Gender: {{singlePet.petGender}}</h4>
+        <h4>Age: {{singlePet.petAge}}</h4>
+        <h4>Breed: {{singlePet.petBreed}}</h4>
+        <h4>Characteristics: {{singlePet.petCharacteristics}}</h4>
+        <h4>Coat Length: {{singlePet.petCoatLength}}</h4>
+        <h4>House-Trained: {{singlePet.petHouseTrained}}</h4>
+      </div>
+      <div class="col-6">
+        <img [src]="singlePet.petPictureLink">
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

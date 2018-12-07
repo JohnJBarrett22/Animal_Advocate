@@ -111,12 +111,12 @@ module.exports = {
         User.findOne({email: req.body.email}, function(err, foundUser){
             if(foundUser){
                 bcrypt.compare(req.body.password, foundUser.password, function(err, result){
-                    console.log("Result", result)
                     if(result == true){
                         res.json({message: "Success!", found: true});
-                        console.log("id", foundUser.id)
                         req.session.userId = foundUser.id;
-                        console.log("SESSION", req.session);
+                        console.log(req.session.id);
+                        console.log(req.session.userId);
+
                     }else{
                         res.json({message: "Invalid login credentials!"});
                     }
