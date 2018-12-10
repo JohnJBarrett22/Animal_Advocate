@@ -16,6 +16,7 @@
       <div id="form" class="col-4">
         <form (submit)="addPet()">
           <!-- Row #1 -->
+          {{ newPet | json }}
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Pet Name</label>
@@ -56,7 +57,7 @@
             <div class="col-md-12 mb-3">
               <label for="validationServer03">Type</label>
               <select class="form-control" id="exampleFormControlSelect1" name="newPet.petType" [(ngModel)]="newPet.petType" required #petType="ngModel">
-                <span class="warning" *ngIf="newPet.petType.length < 2">Pet type is required.</span>
+                <span class="warning" *ngIf="!newPet.petType">Pet type is required.</span>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
               </select>
