@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var PetSchema = new mongoose.Schema({
     petName: {type: String, required: [true, "Pet name is required!"], minlength: [3, "Pet name must be a minimum of 3 characters!"]},
-    petType: {type: String, required: [true, "Pet type is required!"], minlength: [3, "Pet type must be a minimum of 3 characters!"]},
+    petType: {type: String, required: [true, "Pet type is required!"]},
     petBreed: {type: String, required: [true, "Pet breed is required!"], minlength: [3, "Pet breed must be a minimum of 3 characters!"]},
     petAge: {type: Number, required: [true, "Pet age is required!"]},
     petGender: {type: String, required: [true, "Pet gender is required!"]},

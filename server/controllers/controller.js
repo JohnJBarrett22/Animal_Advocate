@@ -113,10 +113,9 @@ module.exports = {
                 bcrypt.compare(req.body.password, foundUser.password, function(err, result){
                     if(result == true){
                         res.json({message: "Success!", found: true});
-                        req.session.userId = foundUser.id;
+                        req.session.userId = foundUser._id;
                         console.log(req.session.id);
-                        console.log(req.session.userId);
-
+                        console.log("Session:", req.session.userId);
                     }else{
                         res.json({message: "Invalid login credentials!"});
                     }

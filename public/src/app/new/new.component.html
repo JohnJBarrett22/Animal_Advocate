@@ -16,7 +16,7 @@
       <div id="form" class="col-4">
         <form (submit)="addPet()">
           <!-- Row #1 -->
-          {{ newPet | json }}
+          <!-- {{ newPet | json }} -->
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="validationServer01">Pet Name</label>
@@ -46,6 +46,7 @@
                 <option value="14">14</option>
                 <option value="15+">15+</option>
               </select>
+              <span class="warning" *ngIf="!newPet.petAge">Pet age is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet age.
               </div>
@@ -57,10 +58,10 @@
             <div class="col-md-12 mb-3">
               <label for="validationServer03">Type</label>
               <select class="form-control" id="exampleFormControlSelect1" name="newPet.petType" [(ngModel)]="newPet.petType" required #petType="ngModel">
-                <span class="warning" *ngIf="!newPet.petType">Pet type is required.</span>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
               </select>
+              <span class="warning" *ngIf="!newPet.petType">Pet type is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet type.
               </div>
@@ -68,6 +69,7 @@
             <div class="col-md-12 mb-3">
               <label for="validationServer04">Breed</label>
               <input type="text" class="form-control" id="validationServer04" name="newPet.petBreed" [(ngModel)]="newPet.petBreed" required>
+              <span class="warning" *ngIf="newPet.petBreed.length < 3">Pet breed must be a minimum of 3 characters.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet breed.
               </div>
@@ -79,9 +81,10 @@
             <div class="col-md-4 mb-3">
               <label for="validationServer04">Gender</label>
               <select class="form-control" id="exampleFormControlSelect1" name="newPet.petGender" [(ngModel)]="newPet.petGender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <span class="warning" *ngIf="!newPet.petGender">Pet gender is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet gender.
               </div>
@@ -93,6 +96,7 @@
                   <option value="Medium">Medium</option>
                   <option value="Long">Long</option>
                 </select>
+                <span class="warning" *ngIf="!newPet.petCoatLength">Pet coat length is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid pet coat length.
               </div>
@@ -103,6 +107,7 @@
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>
+                <span class="warning" *ngIf="!newPet.petHouseTrained">Pet house trained is required.</span>
               <div class="invalid-feedback">
                 Please provide a valid response on if the pet is house trained.
               </div>
@@ -114,6 +119,7 @@
             <div class="col-md-12 mb-3">
               <label for="validationServer03">Characteristics</label>
               <input type="text" class="form-control" id="validationServer03" name="newPet.petCharacteristics" [(ngModel)]="newPet.petCharacteristics" required>
+              <span class="warning" *ngIf="!newPet.petCharacteristics">At least 1 characteristic must be defined.</span>
               <div class="invalid-feedback">
                 Please provide valid characteristics.
               </div>
