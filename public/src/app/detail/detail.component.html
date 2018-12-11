@@ -10,17 +10,27 @@
 <body *ngIf="singlePet">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6">
-        <h1>{{singlePet.petName}}</h1>
-        <h4>Gender: {{singlePet.petGender}}</h4>
-        <h4>Age: {{singlePet.petAge}}</h4>
-        <h4>Breed: {{singlePet.petBreed}}</h4>
-        <h4>Characteristics: {{singlePet.petCharacteristics}}</h4>
-        <h4>Coat Length: {{singlePet.petCoatLength}}</h4>
-        <h4>House-Trained: {{singlePet.petHouseTrained}}</h4>
+      <div class="col-6 box">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-8">
+            <h1>{{singlePet.petName}}</h1>
+            <h4>Gender: {{singlePet.petGender}}</h4>
+            <h4>Age: {{singlePet.petAge}}</h4>
+            <h4>Breed: {{singlePet.petBreed}}</h4>
+            <h4>Characteristics: {{singlePet.petCharacteristics}}</h4>
+            <h4>Coat Length: {{singlePet.petCoatLength}}</h4>
+            <h4>House-Trained: {{singlePet.petHouseTrained}}</h4>
+          </div>
+          <div class="col-2"></div>
+        </div>
       </div>
-      <div class="col-6">
-        <img [src]="singlePet.petPictureLink">
+      <div class="col-6 box">
+        <div class="row">
+        <div class="col-2"></div>
+        <img class="col-8 detailPic" [src]="singlePet.petPictureLink">
+        <div class="col-2"></div>
+        </div>
       </div>
     </div>
   </div>
