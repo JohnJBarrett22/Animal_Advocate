@@ -49,7 +49,7 @@ module.exports = {
         console.log("~Controller: editPet() initialized~");
         Pet.findByIdAndUpdate(
             {_id: req.params.id},
-            {$set: {name: req.body.name, type: req.body.type, description: req.body.description, skill1: req.body.skill1, skill2: req.body.skill2, skill3: req.body.skill3},
+            {$set: {petName: req.body.petName, petType: req.body.petType, petBreed: req.body.petBreed, petAge: req.body.petAge, petGender: req.body.petGender, petCharacteristics: req.body.petCharacteristics, petCoatLength: req.body.petCoatLength, petHouseTrained: req.body.petHouseTrained, petPictureLink: req.body.petPictureLink},
             }, {runValidators: true}, function(err, pet){
             if(err){
                 res.json(err);

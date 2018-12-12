@@ -21,15 +21,18 @@
             <h4>Characteristics: {{singlePet.petCharacteristics}}</h4>
             <h4>Coat Length: {{singlePet.petCoatLength}}</h4>
             <h4>House-Trained: {{singlePet.petHouseTrained}}</h4>
+            <button class="myButton" [routerLink]="['/pets']">Back</button>
+            <button class="myButton" [routerLink]="['/edit']">Like</button>
+            <button class="myButton" [routerLink]="['/pets', singlePet._id, 'edit']">Edit</button>
           </div>
           <div class="col-2"></div>
         </div>
       </div>
       <div class="col-6 box">
         <div class="row">
-        <div class="col-2"></div>
-        <img class="col-8 detailPic" [src]="singlePet.petPictureLink">
-        <div class="col-2"></div>
+          <div class="col-2"></div>
+          <img class="col-8 detailPic" [src]="singlePet.petPictureLink">
+          <div class="col-2"></div>
         </div>
       </div>
     </div>

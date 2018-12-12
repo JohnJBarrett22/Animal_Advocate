@@ -18,9 +18,6 @@ export class NewComponent implements OnInit {
  
   ngOnInit() {
     this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0}
-    // $(document).ready(function(){
-    //   $('select').formSelect();
-    // });
   }
   
   addPet(){
