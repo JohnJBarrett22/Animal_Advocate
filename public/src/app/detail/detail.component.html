@@ -25,7 +25,22 @@
             <button class="myButton" [routerLink]="['/pets']"><i class="far fa-arrow-alt-circle-left"></i> Back</button>
             <button class="myButton" (click)="likePet(singlePet._id)"><i class="fas fa-thumbs-up"></i> Like</button>
             <button class="myButton" [routerLink]="['/pets', singlePet._id, 'edit']"><i class="far fa-edit"></i> Edit</button>
-            <button class="myButton" (click)="deletePet(singlePet._id)"><i class="far fa-minus-square"></i> Remove</button>
+            <button class="myButton" (click)="openVerticallyCentered(content)"><i class="far fa-minus-square"></i> Remove</button>
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title">Remove {{singlePet.petName}}?</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure? Once removed, there is no restore function.&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button class="myButton" (click)="modal.close('Close click')"><i class="fas fa-ban"></i> Cancel</button>
+                <button class="myButtonDelete" (click)="deletePet(singlePet._id)"><i class="far fa-minus-square"></i> Remove</button>
+              </div>
+            </ng-template>
           </div>
           <div class="col-2"></div>
         </div>

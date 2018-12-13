@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
@@ -29,7 +30,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
