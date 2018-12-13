@@ -14,6 +14,16 @@ export class HttpService {
     return this._http.get("/api/pets");
   }
 
+  getAllDogs(){
+    console.log("~Service: getAllDogs() initialized~");
+    return this._http.get("/api/pets/dogs");
+  }
+
+  getAllCats(){
+    console.log("~Service: getAllCats() initialized~");
+    return this._http.get("/api/pets/cats");
+  }
+
   getOnePet(id:string){
     console.log("~Service: getOnePet() initialized~", id);
     return this._http.get("/api/pets/"+id);

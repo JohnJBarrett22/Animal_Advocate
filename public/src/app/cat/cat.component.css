@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover { 
+    text-decoration: none;
+    color: #f57c00;
+}
+#myVid {
+    height: 10rem;
+}
+#myPetName {
+    font-weight: bold;
+}
+.container-fluid {
+    text-align: center;
+}
+.myCard {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    height: 20%;
+    margin: .5rem;
+    padding: .5rem;
+    border-color: #ce93d8;
+}
+.myPic {
+    min-height: 200px;
+    max-height: 200px;
+}
+.card-text {
+    text-align: center;    
+}

@@ -16,6 +16,28 @@ module.exports = {
         })
     },
 
+    dogs: function(req, res){
+        console.log("~Controller: dogs() initialized~");
+        Pet.find({petType: "Dog"}, function(err, dogs){
+            if(err){
+                res.json({message: "Error!", error: err});
+            }else{
+                res.json(dogs);
+            }
+        })
+    },
+    
+    cats: function(req, res){
+        console.log("~Controller: cats() initialized~");
+        Pet.find({petType: "Cat"}, function(err, cats){
+            if(err){
+                res.json({message: "Error!", error: err});
+            }else{
+                res.json(cats);
+            }
+        })
+    },
+
     showPet: function(req, res){
         console.log("~Controller: showPet() initialized~");
         Pet.findOne({_id: req.params.id}, function(err, ride){

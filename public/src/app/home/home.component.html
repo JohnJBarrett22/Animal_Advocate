@@ -13,11 +13,13 @@
     <p><a [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></p>
     <div class="card myCard col-2"  *ngFor="let p of allPets">
       <a [routerLink]="['/pets', p._id]">
-      <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Card image cap">
+      <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Image of {{p.petName}}">
       <div class="card-body">
         <h5 class="card-title">{{p.petName}}</h5>
-        <p class="card-text">{{p.petBreed}}</p>
-        <p class="card-text">{{p.petAge}} - {{p.petType}}</p>
+        <p class="card-text"></p>
+        <p class="card-text" *ngIf="p.petAge < 1">Puppy - {{p.petBreed}}</p>
+        <p class="card-text" *ngIf="p.petAge > 1 && p.petAge < 7">Adult - {{p.petBreed}}</p>
+        <p class="card-text" *ngIf="p.petAge >= 7">Senior - {{p.petBreed}}</p>
       </div>
       </a>
     </div>

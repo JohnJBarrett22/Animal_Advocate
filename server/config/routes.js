@@ -6,6 +6,10 @@ module.exports = function(app){
     //Pet Schema
     app.get("/api/pets", controller.index);
 
+    app.get("/api/pets/dogs", controller.dogs);
+
+    app.get("/api/pets/cats", controller.cats);
+
     app.get("/api/pets/:id", controller.showPet);
 
     app.post("/api/pets", controller.addPet);
