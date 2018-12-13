@@ -7,6 +7,8 @@ import { EditComponent } from './edit/edit.component';
 import { DetailComponent } from './detail/detail.component';
 import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
+import { DogComponent } from './dog/dog.component';
+import { CatComponent } from './cat/cat.component';
 
 const routes: Routes = [
   {path: "", pathMatch:"full", component: HomeComponent},
@@ -14,8 +16,10 @@ const routes: Routes = [
   {path: "pets/info", component: InfoComponent},
   {path: "pets/new", component: NewComponent},
   {path: "pets/login", component: LoginComponent},
+  {path: "pets/dogs", component: DogComponent},
+  {path: "pets/cats", component: CatComponent},
   {path: "pets/:id", component: DetailComponent},
-  {path: "pets/:id/edit", component: EditComponent}
+  {path: "pets/:id/edit", component: EditComponent},
 ];
 
 @NgModule({

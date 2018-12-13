@@ -10,6 +10,7 @@
 </head>
 <body>
   <div class="container-fluid">
+    <p><a [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></p>
     <div class="card myCard col-2"  *ngFor="let p of allPets">
       <a [routerLink]="['/pets', p._id]">
       <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Card image cap">

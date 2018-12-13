@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
+import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [NgbTabsetConfig]
 })
 export class LoginComponent implements OnInit {
  newUser: any;
  user: any;
  errors = [];
 
-  constructor(private _httpService: HttpService,  private _router: Router) { }
+  constructor(private _httpService: HttpService,  private _router: Router, config: NgbTabsetConfig) {
+    config.justify = 'center';
+    config.type = 'tabs';
+   }
 
   ngOnInit() {
     this.newUser = {firstName: "", lastName: "", email: "", organization: "", password: ""};

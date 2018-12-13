@@ -15,6 +15,8 @@ import { EditComponent } from './edit/edit.component';
 import { DetailComponent } from './detail/detail.component';
 import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
+import { DogComponent } from './dog/dog.component';
+import { CatComponent } from './cat/cat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LoginComponent } from './login/login.component';
     EditComponent,
     DetailComponent,
     InfoComponent,
-    LoginComponent
+    LoginComponent,
+    DogComponent,
+    CatComponent
   ],
   imports: [
     BrowserModule,
