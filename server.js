@@ -28,6 +28,18 @@ require("./server/config/routes.js")(app);
 //Sockets
 io.on("connection", (socket)=>{
     console.log("~New connection made~")
+
+    socket.on("join", function(data){
+        socket.join(data.room);
+        console.log(data.user + "joined the room: " + data.room);
+        socket.broadcast.to(data.room).emit("New user joined", {user: data.user, message: "has joined this room."});
+    })
+
+    socket.on("leave", function(data){
+        console.log(data.user + "left the room: " + data.room);
+        socket.broadcast.to(data.room).emit("left room", {user: data.user, message: "has left this room."});
+        socket.leave(data.room);
+    })
 });
 
 //Port
