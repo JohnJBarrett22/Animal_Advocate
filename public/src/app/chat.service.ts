@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as io from "socket.io-client";
 import { Observable } from 'rxjs';
-// import { Observable } from "rxjs/Observable";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class ChatService {
 
   newUserJoined(){
     let observable = new Observable<{user:String, message: String}>(observer=>{
-      this.socket.on("New user joined", (data)=>{
+      this.socket.on("userJoined", (data)=>{
         observer.next(data)
       });
       return () => {this.socket.disconnect();}
@@ -30,7 +29,21 @@ export class ChatService {
 
   userLeftRoom(){
     let observable = new Observable<{user:String, message: String}>(observer=>{
-      this.socket.on("left room", (data)=>{
+      this.socket.on("leftRoom", (data)=>{
+        observer.next(data)
+      });
+      return () => {this.socket.disconnect();}
+    });
+    return observable;
+  }
+
+  sendMessage(data){
+    this.socket.emit("msg", data)
+  }
+
+  newMessageReceived(){
+    let observable = new Observable<{user:String, message: String}>(observer=>{
+      this.socket.on("newMsg", (data)=>{
         observer.next(data)
       });
       return () => {this.socket.disconnect();}
