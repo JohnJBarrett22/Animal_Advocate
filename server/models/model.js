@@ -16,8 +16,7 @@ var PetSchema = new mongoose.Schema({
 var UserSchema = new mongoose.Schema({
     firstName: {type: String, required: [true, "First name is required!"], minlength: [3, "First name must be a minimum of 3 characters!"]},
     lastName: {type: String, required: [true, "Last name is required!"], minlength: [3, "Last name must be a minimum of 3 characters!"]},
-    //UNIQUE
-    email: {type: String, required: [true, "Email is required!"], minlength: [3, "Pet description must be a minimum of 3 characters!"]},
+    email: {type: String, unique: true, required: [true, "Email is required!"], minlength: [3, "Pet description must be a minimum of 3 characters!"]},
     organization: {type: String},
     password: {type: String, required: [true, "Password is required!"], minlength: [8, "Password must be a minimum of 8 characters!"]},
     // confirmPassword: {type: String, required: [true, "Confirm password is required!"], minlength: [8, "Confirm password must be a minimum of 8 characters!"]},

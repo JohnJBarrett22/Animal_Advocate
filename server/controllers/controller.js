@@ -108,20 +108,25 @@ module.exports = {
         )
     },
 
-    //NEED DUP VALIDATION
     addUser: function(req, res){
         console.log("~Controller: addUser() initialized~");
-        bcrypt.hash(req.body.password, 8, function(err, hash){
-            if(err){
-                res.json(err);
+        User.findOne({email: req.body.email}, function(err, foundUser){
+            if(foundUser){
+                res.json({message: "Email already registered!"});
             }else{
-                req.body.password = hash;
-                User.create({firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email, organization: req.body.organization, password: req.body.password}, function(err, pet){
-                    console.log(User);
+                bcrypt.hash(req.body.password, 8, function(err, hash){
                     if(err){
                         res.json(err);
                     }else{
-                        res.json({message: "Success!", added: true});
+                        req.body.password = hash;
+                        User.create({firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email, organization: req.body.organization, password: req.body.password}, function(err, pet){
+                            console.log(User);
+                            if(err){
+                                res.json(err);
+                            }else{
+                                res.json({message: "Success!", added: true});
+                            }
+                        })
                     }
                 })
             }
