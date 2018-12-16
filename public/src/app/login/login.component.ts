@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
       }else{
         console.log("~Component: login() successful~")
         this.user = {email: "", password: ""};
+        this._httpService.signedIn = true;
         this._router.navigate(["/pets"]);
       }      
     })

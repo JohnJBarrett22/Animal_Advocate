@@ -142,7 +142,7 @@ module.exports = {
                         res.json({message: "Success!", found: true});
                         req.session.userId = foundUser._id;
                         req.session.save();
-                        console.log("~Session:", req.session.userId);
+                        console.log("~Session:", req.session.userId + "~");
                     }else{
                         res.json({message: "Invalid login credentials!"});
                     }
@@ -155,23 +155,23 @@ module.exports = {
 
     authenticate: (req, res) => {
         console.log("~Controller: authenticate() initialized~");
-        console.log("Session ID:", req.session.userId);
         if(req.session.userId != undefined) {
-            console.log("Session ID2:", req.session.userId);
+            console.log("~Session ID: ", req.session.userId + "~");
             User.findOne({_id: req.session.userId}, (err, user) => {
-                console.log("USER", user._id)
                 if(err) {
-                    console.log("how?");
                     res.json(err);
-                }
-                else {
-                    console.log('got current user');
-                    res.json({email: user.email, _id: user._id, first_name:user.first_name, last_name:user.last_name});
+                }else{
+                    res.json({first_name: user.first_name, last_name: user.last_name});
                 }
             })
+        }else{
+            res.json({message: "Please sign in first."});
         }
-        else {
-            res.json({errors: 'You are not authorized.'});
-        }
+    },
+
+    logout: (req, res) => {
+        console.log("~Controller: logout() initialized~");
+        req.session.destroy(function(err) {
+         }); 
     }
 }

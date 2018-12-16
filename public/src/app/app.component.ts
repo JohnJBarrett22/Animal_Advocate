@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpService } from './http.service';
 import { ChatService } from "./chat.service";
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent {
   messageArray: Array<{user: String, message: String}> = [];
   isCollapsed = true;
 
-  constructor(private _chatService: ChatService) {
+  constructor(private _httpService: HttpService, private _chatService: ChatService) {
     this._chatService.newUserJoined().subscribe(data => this.messageArray.push(data));
     this._chatService.userLeftRoom().subscribe(data => this.messageArray.push(data));
     this._chatService.newMessageReceived().subscribe(data => this.messageArray.push(data));
