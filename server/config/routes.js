@@ -24,6 +24,8 @@ module.exports = function(app){
     app.post("/api/users", controller.addUser);
 
     app.post("/api/login", controller.login);
+    
+    app.get("/api/logout", controller.logout);
 
     app.get("/api/current_user", controller.authenticate);
 

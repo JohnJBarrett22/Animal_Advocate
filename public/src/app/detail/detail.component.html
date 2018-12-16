@@ -39,7 +39,7 @@
               </div>
               <div class="modal-footer">
                 <button class="myButton" (click)="modal.close('Close click')"><i class="fas fa-ban"></i> Cancel</button>
-                <button class="myButtonDelete" (click)="deletePet(singlePet._id)"><i class="far fa-minus-square"></i> Remove</button>
+                <button class="myButtonDelete" (click)="deletePet(singlePet._id); modal.close('Close click')"><i class="far fa-minus-square"></i> Remove</button>
               </div>
             </ng-template>
           </div>

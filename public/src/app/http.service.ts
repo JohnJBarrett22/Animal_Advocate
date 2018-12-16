@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
+  user = String;
   signedIn = false;
 
   constructor(private _http: HttpClient) { }
@@ -60,6 +61,12 @@ export class HttpService {
     console.log("~Service: loginUser() initialized~", userObj);
     return this._http.post("/api/login", userObj);
   }
+
+  logout(){
+    console.log("~Service: loginUser() initialized~");
+    return this._http.get("/api/logout");
+  }
+
   authenticate() {
     console.log("~Service: authenticate() initialized~");
     return this._http.get('api/current_user');

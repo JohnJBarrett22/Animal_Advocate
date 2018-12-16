@@ -40,29 +40,29 @@ module.exports = {
 
     showPet: function(req, res){
         console.log("~Controller: showPet() initialized~");
-        Pet.findOne({_id: req.params.id}, function(err, ride){
+        Pet.findOne({_id: req.params.id}, function(err, pet){
             if(err){
                 res.json({message: "Error!", error: err});
             }else{
-                res.json(ride);
+                res.json(pet);
             }
         })
     },
 
     addPet: function(req, res){
         console.log("~Controller: addPet() initialized~", req.body);
-        Pet.findOne({petName: req.body.petName}, function(err, pet){
-            if(pet == null){
-            Pet.create({petName: req.body.petName, petType: req.body.petType, petBreed: req.body.petBreed, petAge: req.body.petAge, petGender: req.body.petGender, petCharacteristics: req.body.petCharacteristics, petCoatLength: req.body.petCoatLength, petHouseTrained: req.body.petHouseTrained, petPictureLink: req.body.petPictureLink}, function(err, pet){
-                if(err){
-                    res.json(err);
-                }else{
-                    res.json({message: "Success!", added: true});
-                }
-            })
-            }else{
-                err = {message:"Duplicate pets not allowed!"}
+        Pet.create({petName: req.body.petName, petType: req.body.petType, petBreed: req.body.petBreed, petAge: req.body.petAge, petGender: req.body.petGender, petCharacteristics: req.body.petCharacteristics, petCoatLength: req.body.petCoatLength, petHouseTrained: req.body.petHouseTrained, petPictureLink: req.body.petPictureLink}, function(err, pet){
+            if(err){
                 res.json(err);
+            }else{
+                // User.findById({_id: req.session.userId}, function(err, user){
+                User.update({_id: req.session.userId}, {$push: {pets: pet}}, function(err, data){
+                    if(err){
+                        res.json({message: "Error!", error: err});
+                    }else{
+                        res.json({message: "Success!", added: true});
+                    }
+                })
             }
         })
     },
@@ -139,7 +139,7 @@ module.exports = {
             if(foundUser){
                 bcrypt.compare(req.body.password, foundUser.password, function(err, result){
                     if(result == true){
-                        res.json({message: "Success!", found: true});
+                        res.json({message: "Success!", found: true, user: foundUser.firstName});
                         req.session.userId = foundUser._id;
                         req.session.save();
                         console.log("~Session:", req.session.userId + "~");
@@ -151,6 +151,12 @@ module.exports = {
                 res.json({message: "Invalid login credentials!"});
             }
         })
+    },
+
+    logout: (req, res) => {
+        console.log("~Controller: logout() initialized~");
+        req.session.destroy(function(err) {
+         }); 
     },
 
     authenticate: (req, res) => {
@@ -167,11 +173,5 @@ module.exports = {
         }else{
             res.json({message: "Please sign in first."});
         }
-    },
-
-    logout: (req, res) => {
-        console.log("~Controller: logout() initialized~");
-        req.session.destroy(function(err) {
-         }); 
     }
 }

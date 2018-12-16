@@ -24,7 +24,7 @@
         <a class="nav-link" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pets/logout']"*ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
+        <a class="nav-link" [routerLink]="['/pets/logout']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
       </li>
     </ul>
   </div>

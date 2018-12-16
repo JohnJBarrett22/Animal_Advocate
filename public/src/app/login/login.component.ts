@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit {
         console.log("~Component: login() successful~")
         this.user = {email: "", password: ""};
         this._httpService.signedIn = true;
+        this._httpService.user = data.user
         this._router.navigate(["/pets"]);
       }      
     })
