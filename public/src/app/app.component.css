@@ -14,7 +14,6 @@ p {
     height: 4rem;
     background-color: #ce93d8;
 }
-
 #logo {
     margin-top: -4rem;
     width: 12rem;
@@ -23,4 +22,18 @@ p {
 #myFooter {
     height: 4rem;
     background-color: #ce93d8;
+}
+.myButton {
+    float: right;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: #f57c00;
+  }
+
+.card {
+    float: right;
+    width: 20%;
 }

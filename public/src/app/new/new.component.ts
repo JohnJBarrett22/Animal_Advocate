@@ -11,12 +11,27 @@ import * as $ from 'jquery';
 })
 export class NewComponent implements OnInit {
   newPet: any;
+  loginUser = false;
   errors = [];
   
 
   constructor(private _httpService: HttpService,  private _router: Router) { }
  
   ngOnInit() {
+    var tempObservable = this._httpService.authenticate();
+    tempObservable.subscribe((data:any) => {
+      console.log("got a response", data);
+      if(data.errors == "You are not authorized.") {
+        this._router.navigate(['/']);
+        this.loginUser = false;
+        // console.log(this.loginUser);
+      }
+      else {
+        this._router.navigate(['/pets/new'])
+        this.loginUser = true;
+        
+      }
+    })
     this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0}
   }
   

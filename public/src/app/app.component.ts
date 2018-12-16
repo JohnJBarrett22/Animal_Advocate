@@ -12,6 +12,7 @@ export class AppComponent {
   room: String;
   messageText: String;
   messageArray: Array<{user: String, message: String}> = [];
+  isCollapsed = true;
 
   constructor(private _chatService: ChatService) {
     this._chatService.newUserJoined().subscribe(data => this.messageArray.push(data));

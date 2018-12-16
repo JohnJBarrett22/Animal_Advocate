@@ -25,6 +25,8 @@ module.exports = function(app){
 
     app.post("/api/login", controller.login);
 
+    app.get("/api/current_user", controller.authenticate);
+
     //Angular Catch
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/public/index.html"));

@@ -59,4 +59,8 @@ export class HttpService {
     console.log("~Service: loginUser() initialized~", userObj);
     return this._http.post("/api/login", userObj);
   }
+  authenticate() {
+    console.log("~Service: authenticate() initialized~");
+    return this._http.get('api/current_user');
+  }
 }
