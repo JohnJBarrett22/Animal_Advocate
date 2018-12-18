@@ -1,5 +1,7 @@
 var mongoose = require("mongoose");
 
+var Schema = mongoose.Schema
+
 var PetSchema = new mongoose.Schema({
     petName: {type: String, required: [true, "Pet name is required!"], minlength: [3, "Pet name must be a minimum of 3 characters!"]},
     petType: {type: String, required: [true, "Pet type is required!"]},
@@ -11,6 +13,7 @@ var PetSchema = new mongoose.Schema({
     petHouseTrained: {type: String, required: [true, "Pet house trained is required!"]},
     petPictureLink: {type: String, required: [true, "Pet picture link is required!"]},
     likes: {type: Number, default: 0},
+    _owner: {type: Schema.Types.ObjectId, ref: "User"}
 }, {timestamps: true});
 
 var UserSchema = new mongoose.Schema({

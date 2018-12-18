@@ -23,6 +23,11 @@ p {
     height: 4rem;
     background-color: #ce93d8;
 }
+#chatBox {
+    float: right;
+    position:absolute;
+    bottom: 0;
+}
 .myButton {
     float: right;
     font-weight: bold;

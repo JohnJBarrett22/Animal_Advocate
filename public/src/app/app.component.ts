@@ -38,5 +38,5 @@ export class AppComponent {
     let tempObservable = this._httpService.logout();
     tempObservable.subscribe();
     this._router.navigate(['/']);
-    }
+  }
 }

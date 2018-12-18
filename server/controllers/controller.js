@@ -139,7 +139,7 @@ module.exports = {
             if(foundUser){
                 bcrypt.compare(req.body.password, foundUser.password, function(err, result){
                     if(result == true){
-                        res.json({message: "Success!", found: true, user: foundUser.firstName});
+                        res.json({message: "Success!", found: true, id: foundUser._id, user: foundUser.firstName});
                         req.session.userId = foundUser._id;
                         req.session.save();
                         console.log("~Session:", req.session.userId + "~");
@@ -155,8 +155,13 @@ module.exports = {
 
     logout: (req, res) => {
         console.log("~Controller: logout() initialized~");
-        req.session.destroy(function(err) {
-         }); 
+        req.session.destroy(function(err, data) {
+            if(err) {
+                res.json(err);
+            }else{
+                res.json(data);
+            }
+        }) 
     },
 
     authenticate: (req, res) => {

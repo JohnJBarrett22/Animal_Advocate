@@ -24,7 +24,7 @@
         <a class="nav-link" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pets/logout']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
+        <a class="nav-link" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
       </li>
     </ul>
   </div>
@@ -33,7 +33,7 @@
   <router-outlet></router-outlet>
 
   <button type="button" class="myButton" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" *ngIf="_httpService.signedIn">Chat</button>
-  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div id="chatBox" [ngbCollapse]="isCollapsed">
     <div class="card">
       <div class="card-body">       
         <div class="container-fluid">

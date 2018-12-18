@@ -30,7 +30,7 @@ export class NewComponent implements OnInit {
         console.log("Signed in", this._httpService.signedIn)
       }
     })
-    this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0}
+    this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0, _owner: this._httpService.userId}
   }
   
   addPet(){
@@ -48,7 +48,7 @@ export class NewComponent implements OnInit {
         this.errors.push(data["message"]);
       }else{
         console.log("~Component: addPet() successful~")
-        this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0}
+        this.newPet = {petName: "", petType: "", petBreed: "", petAge: "", petCharacteristics: "", petCoatLength: "", petHouseTrained: "", petPictureLink: "", likes: 0, _owner: this._httpService.userId}
         this._router.navigate(["/pets"]);
       }      
     })
