@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providers: [ChatService]
 })
 export class AppComponent {
-  user = String;
+  user = this._httpService.user;
   room: String;
   messageText: String;
   messageArray: Array<{user: String, message: String}> = [];

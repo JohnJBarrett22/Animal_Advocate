@@ -28,8 +28,8 @@ p {
 }
 #chatBox {
     float: right;
-    position: absolute;
-    width: 110rem;
+    width: 22rem;
+    border: 1px solid black;
 }
 .myButton {
     float: right;
@@ -40,14 +40,20 @@ p {
     border-radius: 1rem;
     color: white;
     background-color: #f57c00;
-  }
-
-.card {
-    float: right;
-    width: 20%;
+}
+.chatSend {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid blue;
 }
 .well {
     height: 200px;
     padding: 15px;
     overflow-y: scroll;
+}
+.topper {
+    background-color: red;
+    height: 1.5rem;
 }

@@ -34,54 +34,47 @@
 
   <button type="button" class="myButton" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" *ngIf="_httpService.signedIn">Chat</button>
   <div id="chatBox" [ngbCollapse]="isCollapsed">
-
-    
-        <div class="container-fluid">
-          <div class="row">
-            <h2>Live Chat</h2>
-            <hr>
+    <div class="container-fluid">
+      <div class="row topper">
+        <p>{{item.room}}</p>
+      </div>
+      <div class="row">
+        <!-- <div class="userInfo">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
           </div>
-          <div class="row">
-              <div class="userInfo">
-                <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
-                </div>
-              </div>
-              <div class="roomInfo">
-                <label for="roomInput">Choose room</label>
-                <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
-                  <option value="Lobby">Lobby</option>
-                  <option value="Dog">Dog Chat</option>
-                  <option value="Cat">Cat Chat</option>
-                  <option value="Volunteer">Volunteer Chat</option>
-                </select>
-              </div>
-              <div class="chatButtons">
-                <div class="pull-right"> 
-                  <button type="button" class="btn btn-primary" (click)="join()">Join</button>
-                  <button type="button" class="btn btn-default" (click)="leave()">Leave</button>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="well">
-              <div *ngFor="let item of messageArray">
-              <span><strong>{{item.user}} </strong> {{item.message}}</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" [(ngModel)]="messageText">            
-            </div>
-            <div class="col-sm-2">
-              <button type="button" class="btn btn-success pull-right" (click)="sendMessage()">Send</button>
-            </div>
+        </div> -->
+        <div class="col-sm-7 roomInfo">
+          <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
+            <option selected></option>
+            <option value="Lobby">Lobby</option>
+            <option value="Dog">Dog Chat</option>
+            <option value="Cat">Cat Chat</option>
+            <option value="Volunteer">Volunteer Chat</option>
+          </select>
+        </div>
+        <div class="col-sm-5 chatButtons">
+          <button type="button" class="btn btn-primary" (click)="join()">Join</button>
+          <button type="button" class="btn btn-default" (click)="leave()">Leave</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 well">
+          <div *ngFor="let item of messageArray">
+          <span><strong>{{_httpService.user}}: </strong> {{item.message}}</span>
           </div>
         </div>
-
-
+      </div>
+      <div class="row no-gutters">
+        <div class="col-sm-11">
+          <input type="text" class="form-control" [(ngModel)]="messageText">            
+        </div>
+        <div class="col-sm-1">
+          <button class="chatSend" type="button"(click)="sendMessage()"><i class="far fa-share-square"></i></button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="myFooter">
