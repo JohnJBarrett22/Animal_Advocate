@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providers: [ChatService]
 })
 export class AppComponent {
-  user = this._httpService.user;
+  user = String;
   room: String;
   messageText: String;
   messageArray: Array<{user: String, message: String}> = [];
@@ -32,6 +32,7 @@ export class AppComponent {
 
   sendMessage(){
     this._chatService.sendMessage({user:this.user, room:this.room, message:this.messageText});
+    this.messageText = "";
   }
 
   logout() {

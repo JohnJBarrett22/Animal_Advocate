@@ -24,7 +24,7 @@
         <a class="nav-link" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+        <a class="nav-link" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
       </li>
     </ul>
   </div>
@@ -34,21 +34,21 @@
 
   <button type="button" class="myButton" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" *ngIf="_httpService.signedIn">Chat</button>
   <div id="chatBox" [ngbCollapse]="isCollapsed">
-    <div class="card">
-      <div class="card-body">       
+
+    
         <div class="container-fluid">
           <div class="row">
             <h2>Live Chat</h2>
             <hr>
           </div>
           <div class="row">
-              <div class="c">
+              <div class="userInfo">
                 <div class="form-group">
                   <label for="username">Username</label>
                   <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
                 </div>
               </div>
-              <div class="c">
+              <div class="roomInfo">
                 <label for="roomInput">Choose room</label>
                 <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
                   <option value="Lobby">Lobby</option>
@@ -57,15 +57,15 @@
                   <option value="Volunteer">Volunteer Chat</option>
                 </select>
               </div>
-              <div class="c">
-                <div style="margin-top:19px;" class="pull-right"> 
+              <div class="chatButtons">
+                <div class="pull-right"> 
                   <button type="button" class="btn btn-primary" (click)="join()">Join</button>
                   <button type="button" class="btn btn-default" (click)="leave()">Leave</button>
                 </div>
               </div>
           </div>
           <div class="row">
-            <div class="well" style="height:200px; padding:15px;">
+            <div class="well">
               <div *ngFor="let item of messageArray">
               <span><strong>{{item.user}} </strong> {{item.message}}</span>
               </div>
@@ -80,8 +80,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
+
   </div>
 
   <div id="myFooter">
