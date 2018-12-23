@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 a {
     color: white;
@@ -23,12 +23,18 @@ p {
     height: 10rem;
 }
 #myFooter {
+    position: absolute;
     height: 4rem;
+    left: 0;
+    right: 0;
+    /* top: 0; */
+    bottom: 0;
     background-color: #ce93d8;
 }
 #chatBox {
     float: right;
     width: 22rem;
+    bottom: 0;
     border: 1px solid black;
 }
 .myButton {
@@ -46,7 +52,6 @@ p {
     border: none;
     margin: 0;
     padding: 0;
-    border: 1px solid blue;
 }
 .well {
     height: 200px;
