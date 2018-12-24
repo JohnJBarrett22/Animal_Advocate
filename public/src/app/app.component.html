@@ -9,26 +9,26 @@
   <title>Animal Advocate</title>
 </head>
 <body>
-  <div id="myNav">
-    <ul class="nav justify-content-end">
+<div id="myNav">
+  <a [routerLink]="['/pets']"><img id="logo" src="assets/LogoLong.png"></a>
+    <ul class="nav justify-content-end nav1">
       <li class="nav-item">
-        <a class="nav-link active" [routerLink]="['/pets']"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link nav1 active" [routerLink]="['/pets']"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pets/info']"><i class="fas fa-info-circle"></i> About Us</a>
+        <a class="nav-link nav1" [routerLink]="['/pets/info']"><i class="fas fa-info-circle"></i> About Us</a>
       </li>
       <li class="nav-item" *ngIf="_httpService.signedIn">
-        <a class="nav-link" [routerLink]="['/pets/new']"><i class="fas fa-paw"></i> Add Pet</a>
+        <a class="nav-link nav1" [routerLink]="['/pets/new']"><i class="fas fa-paw"></i> Add Pet</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
+        <a class="nav-link nav1" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
+        <a class="nav-link nav1" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
       </li>
     </ul>
   </div>
-  <a [routerLink]="['/pets']"><img id="logo" src="assets/animal_advocate.png"></a>
   
   <router-outlet></router-outlet>
 
@@ -36,7 +36,7 @@
   <div id="chatBox" [ngbCollapse]="isCollapsed">
     <div class="container-fluid">
       <div class="row topper">
-        <p>{{item.room}}</p>
+        <!-- <p>{{item.room}}</p> -->
       </div>
       <div class="row">
         <!-- <div class="userInfo">
@@ -78,7 +78,7 @@
   </div>
 
   <div id="myFooter">
-    <p>Animal Advocate is not a real adoption site and only serves the purpose of demonstrating web functionality.</p>
+    <p class="disclaimer">Animal Advocate is not a real adoption site and only serves the purpose of demonstrating web functionality.</p>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

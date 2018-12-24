@@ -10,6 +10,28 @@
 </head>
 <body>
   <div class="container-fluid">
+    <div id="myNav2">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link nav2 active" [routerLink]="['/pets']">About Pet Adoption</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2" [routerLink]="['/pets/info']">Dog Care</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2" [routerLink]="['/pets/new']">Cat Care</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2" [routerLink]="['/pets/login']">Shelters & Rescues</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2" [routerLink]="['/pets']">Videos</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <img id="banner" src="assets/banner.jpg">
     <p><a [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></p>
     <div class="card myCard col- col-md-2"  *ngFor="let p of allPets">
       <a [routerLink]="['/pets', p._id]">
@@ -23,6 +45,7 @@
       </div>
       </a>
     </div>
+
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

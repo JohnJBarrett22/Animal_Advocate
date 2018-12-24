@@ -35,4 +35,13 @@ box-shadow: inset 0 1px 9px rgba(0, 0, 0, 0.095), 0 0 8px #f57c00;
 }
 .myTabs:focus {
   color: black;
-  }
+}
+#myFooter {
+  height: 4rem;
+  background-color: #ce93d8;
+}
+.disclaimer {
+  text-align: center;
+  color: white;
+}
+  
