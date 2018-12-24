@@ -23,7 +23,6 @@
             <h4>Characteristics: {{singlePet.petCharacteristics}}</h4>
             <h4>Coat Length: {{singlePet.petCoatLength}}</h4>
             <h4>House-Trained: {{singlePet.petHouseTrained}}</h4>
-            <h4>CHECK: {{singlePet._owner}}</h4>
             <button class="myButton" [routerLink]="['/pets']"><i class="far fa-arrow-alt-circle-left"></i> Back</button>
             <button class="myButton" (click)="likePet(singlePet._id)"><i class="fas fa-thumbs-up"></i> Like</button>
             <button class="myButton" [routerLink]="['/pets', singlePet._id, 'edit']" *ngIf="singlePet._owner == _httpService.userId"><i class="far fa-edit"></i> Edit</button>
