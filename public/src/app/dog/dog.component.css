@@ -18,7 +18,7 @@ a:hover {
 .myCard {
     display: inline-block;
     vertical-align: top;
-    width: 20%;
+    width: 15.90%;
     height: 20%;
     margin: .5rem;
     padding: .5rem;
@@ -30,4 +30,15 @@ a:hover {
 }
 .card-text {
     text-align: center;    
+}
+.sort {
+    height: 4rem;
+    background-color: #ce93d8;
+    padding: 1rem;
+    color: white;
+    border-radius: 1rem;
+}
+.white {
+    color: white;
+    vertical-align: middle;
 }

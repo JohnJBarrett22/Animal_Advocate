@@ -10,7 +10,13 @@
 </head>
 <body>
   <div class="container-fluid">
-    <p><a [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></p>
+    <div class="row no-gutters">
+        <div class="col- col-md-1"></div>
+      <div class="col- col-md-10 sort">
+        <h5><a class="white" [routerLink]="['/pets']"><i class="fas fa-folder"></i> All</a> | <a class="white" [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></h5>
+      </div>
+      <div class="col- col-md-1"></div>
+    </div>
     <div class="card myCard col-2"  *ngFor="let d of allDogs">
       <a [routerLink]="['/pets', d._id]">
       <img class="card-img-top myPic" [src]="d.petPictureLink" alt="Image of {{d.petName}}">

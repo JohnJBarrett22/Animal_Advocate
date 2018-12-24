@@ -11,7 +11,7 @@
 <body>
   <div class="container-fluid">
     <div id="myNav2">
-      <ul class="nav justify-content-end">
+      <ul class="nav justify-content-center">
         <li class="nav-item">
           <a class="nav-link nav2 active" [routerLink]="['/pets']">About Pet Adoption</a>
         </li>
@@ -30,10 +30,20 @@
       </ul>
     </div>
 
-
-    <img id="banner" src="assets/banner.jpg">
-    <p><a [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></p>
-    <div class="card myCard col- col-md-2"  *ngFor="let p of allPets">
+    <div id="banner">
+      <div id="innerBanner">
+        <h1 id="innerText">Where Animals Find Their Advocate</h1>
+        <h5>Thousands of animals are looking for an advocate. An advocate like you.</h5>
+      </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col- col-md-1"></div>
+      <div class="col- col-md-10 sort">
+        <h5><a class="white" [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a class="white" [routerLink]="['/pets/cats']"><i class="fas fa-cat"></i> Cats</a></h5>
+      </div>
+      <div class="col- col-md-1"></div>
+    </div>
+    <div class="card myCard col- col-md-2" *ngFor="let p of allPets">
       <a [routerLink]="['/pets', p._id]">
       <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Image of {{p.petName}}">
       <div class="card-body">
