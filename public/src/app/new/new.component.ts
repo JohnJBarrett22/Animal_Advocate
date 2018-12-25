@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
 
 
 @Component({
@@ -13,7 +12,6 @@ export class NewComponent implements OnInit {
   newPet: any;
   errors = [];
   
-
   constructor(private _httpService: HttpService,  private _router: Router) { }
  
   ngOnInit() {

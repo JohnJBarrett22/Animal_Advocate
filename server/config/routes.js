@@ -29,6 +29,8 @@ module.exports = function(app){
 
     app.get("/api/current_user", controller.authenticate);
 
+    app.get("/api/users/:id", controller.showUser);
+
     //Angular Catch
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/public/index.html"));

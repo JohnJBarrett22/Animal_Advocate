@@ -178,5 +178,16 @@ module.exports = {
         }else{
             res.json({message: "Please sign in first."});
         }
-    }
+    },
+
+    showUser: function(req, res){
+        console.log("~Controller: showUser() initialized~");
+        User.findOne({_id: req.params.id}, function(err, user){
+            if(err){
+                res.json({message: "Error!", error: err});
+            }else{
+                res.json(user);
+            }
+        })
+    },
 }

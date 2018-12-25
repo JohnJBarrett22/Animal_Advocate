@@ -72,4 +72,9 @@ export class HttpService {
     console.log("~Service: authenticate() initialized~");
     return this._http.get('api/current_user');
   }
+
+  getOneUser(id:string){
+    console.log("~Service: getOneUser() initialized~", id);
+    return this._http.get("/api/users/"+id);
+  }
 }

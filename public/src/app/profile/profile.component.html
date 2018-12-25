@@ -1,3 +1,56 @@
-<p>
-  profile works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <title>Animal Advocate</title>
+</head>
+<body *ngIf="singleUser">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 box">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-8">
+            <h1>{{singleUser.firstName}} {{singleUser.lastName}}</h1>
+            <h4>Email: {{singleUser.email}}</h4>
+            <h4>Organization: {{singleUser.organization}}</h4>
+            <button class="myButton" [routerLink]="['/pets']"><i class="far fa-arrow-alt-circle-left"></i> Back</button>
+            <button class="myButton" [routerLink]="['/users', singleUser._id, 'edit']"><i class="far fa-edit"></i> Edit</button>
+            <button class="myButton" (click)="openVerticallyCentered(content)"><i class="far fa-minus-square"></i> Remove</button>
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title">Remove {{singleUser.firstName}}?</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure? Once removed, there is no restore function.&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button class="myButton" (click)="modal.close('Close click')"><i class="fas fa-ban"></i> Cancel</button>
+                <button class="myButtonDelete" (click)="deletePet(singlePet._id); modal.close('Close click')"><i class="far fa-minus-square"></i> Remove</button>
+              </div>
+            </ng-template>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      </div>
+      <div class="col-6 box">
+        <div class="row">
+          <div class="col-2"></div>
+          <!-- <img class="col-8 detailPic" [src]="singlePet.petPictureLink"> -->
+          <div class="col-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
