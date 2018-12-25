@@ -8,6 +8,7 @@ import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ParallaxModule, ParallaxConfig } from 'ngx-parallax';
 
 import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
@@ -35,7 +36,8 @@ import { CatComponent } from './cat/cat.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ParallaxModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
