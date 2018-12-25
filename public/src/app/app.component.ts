@@ -38,6 +38,7 @@ export class AppComponent {
   logout() {
     let tempObservable = this._httpService.logout();
     tempObservable.subscribe();
+    this._httpService.signedIn = false;
     this._router.navigate(['/']);
   }
 }

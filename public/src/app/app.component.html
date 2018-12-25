@@ -21,11 +21,14 @@
       <li class="nav-item" *ngIf="_httpService.signedIn">
         <a class="nav-link nav1" [routerLink]="['/pets/new']"><i class="fas fa-paw"></i> Add Pet</a>
       </li>
+      <li class="nav-item" *ngIf="_httpService.signedIn">
+        <a class="nav-link nav1" [routerLink]="['/user', userId]"><i class="fas fa-user-cog"></i> My Profile</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link nav1" [routerLink]="['/pets/login']" *ngIf="!_httpService.signedIn"><i class="fas fa-user"></i> Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav1" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-user"></i> Sign Out</a>
+        <a class="nav-link nav1" (click)="logout()" [routerLink]="['/pets']" *ngIf="_httpService.signedIn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
       </li>
     </ul>
   </div>

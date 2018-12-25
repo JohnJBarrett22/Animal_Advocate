@@ -18,6 +18,7 @@ import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
 import { DogComponent } from './dog/dog.component';
 import { CatComponent } from './cat/cat.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CatComponent } from './cat/cat.component';
     InfoComponent,
     LoginComponent,
     DogComponent,
-    CatComponent
+    CatComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
