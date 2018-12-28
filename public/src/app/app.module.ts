@@ -21,6 +21,7 @@ import { CatComponent } from './cat/cat.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { FaqComponent } from './faq/faq.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FaqComponent } from './faq/faq.component';
     CatComponent,
     ProfileComponent,
     UserEditComponent,
-    FaqComponent
+    FaqComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
