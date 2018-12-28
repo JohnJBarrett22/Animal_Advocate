@@ -20,6 +20,7 @@ import { DogComponent } from './dog/dog.component';
 import { CatComponent } from './cat/cat.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     DogComponent,
     CatComponent,
     ProfileComponent,
-    UserEditComponent
+    UserEditComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

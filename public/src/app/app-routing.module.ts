@@ -11,6 +11,7 @@ import { DogComponent } from './dog/dog.component';
 import { CatComponent } from './cat/cat.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
   {path: "", pathMatch:"full", component: HomeComponent},
@@ -20,10 +21,11 @@ const routes: Routes = [
   {path: "pets/login", component: LoginComponent},
   {path: "pets/dogs", component: DogComponent},
   {path: "pets/cats", component: CatComponent},
+  {path: "pets/faq", component: FaqComponent},
   {path: "pets/:id", component: DetailComponent},
   {path: "pets/:id/edit", component: EditComponent},
   {path: "users/:id", component: ProfileComponent},
-  {path: "users/:id/edit", component: UserEditComponent}
+  {path: "users/:id/edit", component: UserEditComponent}  
 ];
 
 @NgModule({
