@@ -190,4 +190,18 @@ module.exports = {
             }
         })
     },
+
+    editUser: function(req, res){
+        console.log("~Controller: editUser() initialized~");
+        User.findByIdAndUpdate(
+            {_id: req.params.id},
+            {$set: {firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email, organization: req.body.organization, password: req.body.password},
+            }, {runValidators: true}, function(err, user){
+            if(err){
+                res.json(err);
+            }else{
+                res.json({message: "Success!", user: user})
+            }
+        })
+    }
 }

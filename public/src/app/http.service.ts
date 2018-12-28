@@ -77,4 +77,9 @@ export class HttpService {
     console.log("~Service: getOneUser() initialized~", id);
     return this._http.get("/api/users/"+id);
   }
+
+  editUser(id:string, editUser:object){
+    console.log("~Service: editUser() initialized~", editUser);
+    return this._http.put("/api/users/"+id, editUser);
+  }
 }

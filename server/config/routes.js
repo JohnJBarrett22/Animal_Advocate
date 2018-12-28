@@ -31,6 +31,8 @@ module.exports = function(app){
 
     app.get("/api/users/:id", controller.showUser);
 
+    app.put("/api/users/:id", controller.editUser);
+
     //Angular Catch
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/public/index.html"));
