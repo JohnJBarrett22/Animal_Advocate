@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <title>Animal Advocate</title>
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col"></div>
+        <div id="form" class="col-6">
+          <form (submit)="editUser()">
+            <!-- Row #1 -->
+            <!-- {{editUser | json }} -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">First Name</label>
+                <input type="text" class="form-control" id="validationServer01" name="editUser.firstName" [(ngModel)]="editUser.firstName" required minlength="3" #firstName="ngModel">
+                <span class="warning" *ngIf="editUser.firstName.length < 3">First name must be a minimum of 3 characters.</span>
+                <div class="valid-feedback">
+                  Please provide a valid first name.
+                </div>
+              </div>
+            </div>
+  
+            <!-- Row #2 -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">Last Name</label>
+                <input type="text" class="form-control" id="validationServer02" name="editUser.lastName" [(ngModel)]="editUser.lastName" required minlength="3" #lastName="ngModel">
+                <span class="warning" *ngIf="editUser.lastName.length < 3">Last name must be a minimum of 3 characters.</span>
+                <div class="valid-feedback">
+                  Please provide a valid last name.
+                </div>
+              </div>
+            </div>
+  
+            <!-- Row #3 -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">Email</label>
+                <input type="text" class="form-control" id="validationServer03" name="editUser.email" [(ngModel)]="editUser.email" required minlength="9" #email="ngModel">
+                <span class="warning" *ngIf="editUser.email.length < 9">Email must be a minimum of 9 characters.</span>
+                <div class="valid-feedback">
+                  Please provide a valid email.
+                </div>
+              </div>
+            </div>
+  
+            <!-- Row #4 -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">Oragnization</label>
+                <input type="text" class="form-control" id="validationServer04" name="editUser.organization" [(ngModel)]="editUser.organization">
+              </div>
+            </div>
+  
+            <!-- Row #5 -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">Password</label>
+                <input type="text" class="form-control" id="validationServer05" name="editUser.password" [(ngModel)]="editUser.password" required minlength="8" #password="ngModel">
+                <span class="warning" *ngIf="editUser.password.length < 8">Password must be a minimum of 8 characters.</span>
+                <div class="valid-feedback">
+                  Please provide a valid password.
+                </div>
+              </div>
+            </div>
+            <!-- PASSWORD VALIDATIONS???? -->
+  
+            <!-- Row #6 -->
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for="validationServer01">Confirm Password</label>
+                <input type="text" class="form-control" id="validationServer06" name="editUser.confirmPassword" [(ngModel)]="editUser.confirmPassword">
+                <div class="valid-feedback">
+                  Please provide a valid password confirmation.
+                </div>
+              </div>
+            </div>
+  
+            <button class="myButton" type="submit"><i class="fas fa-edit"></i> Update</button>
+          </form>
+          <p class="error" *ngFor="let e of errors">{{e}}</p>
+        </div>
+      <div class="col"></div>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

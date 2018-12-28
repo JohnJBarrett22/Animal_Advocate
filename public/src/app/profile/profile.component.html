@@ -17,6 +17,7 @@
           <div class="col-8">
             <h1>{{singleUser.firstName}} {{singleUser.lastName}}</h1>
             <h4>Email: {{singleUser.email}}</h4>
+            <h4>Phone: </h4>
             <h4>Organization: {{singleUser.organization}}</h4>
             <button class="myButton" [routerLink]="['/pets']"><i class="far fa-arrow-alt-circle-left"></i> Back</button>
             <button class="myButton" [routerLink]="['/users', singleUser._id, 'edit']"><i class="far fa-edit"></i> Edit</button>
