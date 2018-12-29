@@ -13,6 +13,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { FaqComponent } from './faq/faq.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { AboutComponent } from './about/about.component';
+import { DogcareComponent } from './dogcare/dogcare.component';
+import { CatcareComponent } from './catcare/catcare.component';
+import { RescuesComponent } from './rescues/rescues.component';
+import { VideosComponent } from './videos/videos.component';
 
 const routes: Routes = [
   {path: "", pathMatch:"full", component: HomeComponent},
@@ -24,6 +29,11 @@ const routes: Routes = [
   {path: "pets/cats", component: CatComponent},
   {path: "pets/faq", component: FaqComponent},
   {path: "pets/privacy", component: PrivacyComponent},
+  {path: "pets/about", component: AboutComponent},
+  {path: "pets/dogcare", component: DogcareComponent},
+  {path: "pets/catcare", component: CatcareComponent},
+  {path: "pets/rescues", component: RescuesComponent},
+  {path: "pets/videos", component: VideosComponent},
   {path: "pets/:id", component: DetailComponent},
   {path: "pets/:id/edit", component: EditComponent},
   {path: "users/:id", component: ProfileComponent},

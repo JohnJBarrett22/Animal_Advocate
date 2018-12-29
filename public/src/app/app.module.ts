@@ -22,6 +22,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { FaqComponent } from './faq/faq.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { AboutComponent } from './about/about.component';
+import { DogcareComponent } from './dogcare/dogcare.component';
+import { CatcareComponent } from './catcare/catcare.component';
+import { RescuesComponent } from './rescues/rescues.component';
+import { VideosComponent } from './videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { PrivacyComponent } from './privacy/privacy.component';
     ProfileComponent,
     UserEditComponent,
     FaqComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    AboutComponent,
+    DogcareComponent,
+    CatcareComponent,
+    RescuesComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
