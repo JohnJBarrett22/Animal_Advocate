@@ -1,0 +1,32 @@
+h2 {
+    color: #f57c00;
+}
+h4 {
+    color: #f57c00;
+}
+.disclaimer2 {
+    color: #f57c00;
+    font-weight: bold;
+}
+#myFooter {
+    height: 4rem;
+    background-color: #ce93d8;
+}
+.disclaimer {
+    text-align: center;
+    color: white;
+}
+#myNav2 {
+    height: 4rem;
+    background-color: #ce93d8;
+}
+.nav2 {
+    font-weight: bold;
+    margin-top: .75rem;
+    text-align: center;
+    color: white;
+}
+a:hover { 
+    text-decoration: none;
+    color: #f57c00;
+}
