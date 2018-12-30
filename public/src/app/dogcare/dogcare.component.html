@@ -9,13 +9,55 @@
   <title>Animal Advocate</title>
 </head>
 <body>
-<div id="myNav2">
+  <div id="myNav2">
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link nav2 active" [routerLink]="['/pets/privacy']">Privacy Policy</a>
+        <a class="nav-link nav2 active" [routerLink]="['/pets/about']">About Pet Adoption</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav2" [routerLink]="['/pets/dogcare']">Dog Care</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav2" [routerLink]="['/pets/catcare']">Cat Care</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav2" [routerLink]="['/pets/rescues']">Shelters & Rescues</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav2" [routerLink]="['/pets/videos']">Videos</a>
       </li>
     </ul>
   </div>
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <img src="../assets/Bench.jpg" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>10 seconds between slides...</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="../assets/Hug.jpg" alt="Random second slide">
+      <div class="carousel-caption">
+        <h3>No mouse events...</h3>
+        <p>This carousel doesn't pause or resume on mouse events</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="../assets/Bench.jpg"  alt="Random third slide">
+      <div class="carousel-caption">
+        <h3>No keyboard...</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="../assets/Hug.jpg" alt="Random fourth slide">
+      <div class="carousel-caption">
+        <h3>And no wrap after last slide.</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
   <div class="row">
     <div class="col"></div>
     <div class="col-6">
