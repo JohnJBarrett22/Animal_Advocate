@@ -55,7 +55,7 @@ import { VideosComponent } from './videos/videos.component';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ParallaxModule
+    ParallaxModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
