@@ -20,7 +20,6 @@
   color: white;
   background-color: #f57c00;
 }
-
 .form-control:focus {
   border-color: #f57c00;
   box-shadow: inset 0 1px 9px rgba(0, 0, 0, 0.095), 0 0 8px #f57c00;
@@ -29,4 +28,7 @@
   font-size: 10px;
   font-style: italic;
   color: #ce93d8;
+}
+.main {
+  margin-top: 3rem;
 }
