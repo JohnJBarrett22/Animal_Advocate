@@ -4,6 +4,9 @@ h2 {
 h4 {
     color: #f57c00;
 }
+p {
+    text-align: center;
+}
 a:hover { 
     text-decoration: none;
     color: #f57c00;
