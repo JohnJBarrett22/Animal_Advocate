@@ -34,3 +34,7 @@ a:hover {
 .main {
     margin-top: 3rem;
 }
+.videoGuide {
+    margin: 0;
+    max-width: 100%;
+}
