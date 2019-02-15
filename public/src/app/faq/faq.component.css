@@ -12,9 +12,9 @@ h2 {
 h4 {
     color: #f57c00;
 }
-.disclaimer2 {
-    color: #f57c00;
-    font-weight: bold;
+#myNav2 {
+    height: 4rem;
+    background-color: #ce93d8;
 }
 #myFooter {
     height: 4rem;
@@ -24,9 +24,9 @@ h4 {
     text-align: center;
     color: white;
 }
-#myNav2 {
-    height: 4rem;
-    background-color: #ce93d8;
+.disclaimer2 {
+    color: #f57c00;
+    font-weight: bold;
 }
 .nav2 {
     font-weight: bold;
@@ -34,7 +34,6 @@ h4 {
     text-align: center;
     color: white;
 }
-a:hover { 
-    text-decoration: none;
-    color: #f57c00;
+.main {
+    margin-top: 3rem;
 }
