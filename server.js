@@ -9,7 +9,7 @@ const io = require("socket.io")(server);
 const TWO_HOURS = 1000 * 60 * 60 * 2
 const {
     PORT = 1337,
-    SESSION_NAME = 'sid',
+    SESSION_NAME = 'sID',
     SESSION_SECRET = '1DoG2CaT3PeTs!',
     SESSION_LIFETIME = TWO_HOURS
 } = process.env
