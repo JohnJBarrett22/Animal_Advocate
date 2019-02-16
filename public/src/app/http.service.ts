@@ -59,6 +59,7 @@ export class HttpService {
     shelters.subscribe((data:any) => {
       console.log(data);
     })
+    return shelters;
   }
 
   //User
