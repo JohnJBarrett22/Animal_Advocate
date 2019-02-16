@@ -12,6 +12,7 @@ module.exports = {
                 res.json({message: "Error!", error: err});
             }else{
                 res.json(pets);
+                console.log(req.session);
             }
         })
     },
@@ -143,6 +144,7 @@ module.exports = {
                         req.session.userId = foundUser._id;
                         req.session.save();
                         console.log("~Session:", req.session.userId + "~");
+                        console.log(req.session);
                     }else{
                         res.json({message: "Invalid login credentials!"});
                     }
@@ -160,6 +162,7 @@ module.exports = {
                 res.json(err);
             }else{
                 res.json(data);
+                console.log(req.session);
             }
         }) 
     },
