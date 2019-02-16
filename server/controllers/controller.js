@@ -1,7 +1,7 @@
-var mongoose = require("mongoose");
-var Pet = mongoose.model("Pet");
-var User = mongoose.model("User");
-var bcrypt = require("bcryptjs");
+const mongoose = require("mongoose");
+const Pet = mongoose.model("Pet");
+const User = mongoose.model("User");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
     

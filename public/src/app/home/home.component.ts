@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   loadPage(){
     console.log("~Component: loadPage() initialzed~")
+    console.log("USER", this._httpService.user)
     let tempObs = this._httpService.getAllPets();
     tempObs.subscribe((data:any)=>{
       console.log("~Component: loadPage() response~", data)
