@@ -7,6 +7,11 @@ h4 {
 p {
     text-align: center;
 }
+hr {
+    border-color: #f57c00;
+    color: #f57c00;
+    background-color: #f57c00;
+}
 a:hover { 
     text-decoration: none;
     color: #f57c00;
