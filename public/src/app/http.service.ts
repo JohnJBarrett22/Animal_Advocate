@@ -8,6 +8,7 @@ import { Session } from 'protractor';
 export class HttpService {
   user = String;
   userId = String;
+  apiKey = "843b22ac824d22e2078803dbca431e0f";
   signedIn = false;
 
   constructor(private _http: HttpClient) { }
@@ -55,9 +56,9 @@ export class HttpService {
 
   //Shelter
   retriveShelters(){
-    let shelters = this._http.get("https://pokeapi.co/api/v2/ability/65/");
+    console.log("~Service: retrieveShelters() initialized~");
+    let shelters = this._http.get(`https://api.petfinder.com/pet.find?format=json&key=843b22ac824d22e2078803dbca431e0f&animal=dog&location=91606&callback=?`);
     shelters.subscribe((data:any) => {
-      console.log(data);
     })
     return shelters;
   }
