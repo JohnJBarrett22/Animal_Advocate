@@ -1,21 +1,32 @@
 //Imports
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
-var session = require("express-session");
-var server = app.listen(1337);
-var io = require("socket.io")(server);
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const server = app.listen(1337);
+const io = require("socket.io")(server);
+const TWO_HOURS = 1000 * 60 * 60 * 2
+const {
+    PORT = 1337,
+    SESSION_NAME = 'sid',
+    SESSION_SECRET = '1DoG2CaT3PeTs!',
+    SESSION_LIFETIME = TWO_HOURS
+} = process.env
 
 //Config
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public/dist/public"));
 app.use(bodyParser.json());
 app.use(session({
-    secret: "mooMoomoo",
+    name: SESSION_NAME,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 600000 }
+    cookie: { 
+        maxAge: SESSION_LIFETIME,
+        sameSite: true
+    }
 }));
 
 //Database
@@ -47,6 +58,6 @@ io.on("connection", (socket)=>{
 });
 
 //Port
-// app.listen(1337, function(){
+// app.listen(PORT, function(){
 //     console.log("Listening on port: 1337");
 // });
