@@ -10,7 +10,7 @@ const TWO_HOURS = 1000 * 60 * 60 * 2
 const {
     PORT = 1337,
     SESSION_NAME = 'sID',
-    SESSION_SECRET = '1DoG2CaT3PeTs!',
+    SESSION_SECRET = '!1DoG_2CaTs_3PeTs!',
     SESSION_LIFETIME = TWO_HOURS
 } = process.env
 

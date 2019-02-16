@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loadPage()
+    this._httpService.retriveShelters();
   }
 
   loadPage(){
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
     let tempObs = this._httpService.getAllPets();
     tempObs.subscribe((data:any)=>{
       console.log("~Component: loadPage() response~", data)
+      console.log()
       this.allPets = data;
     })
   }

@@ -53,6 +53,14 @@ export class HttpService {
     return this._http.get("/api/like/"+id);
   }
 
+  //Shelter
+  retriveShelters(){
+    let shelters = this._http.get("https://pokeapi.co/api/v2/ability/65/");
+    shelters.subscribe((data:any) => {
+      console.log(data);
+    })
+  }
+
   //User
   postUser(userObj){
     console.log("~Service: postUser() initialized~", userObj);
