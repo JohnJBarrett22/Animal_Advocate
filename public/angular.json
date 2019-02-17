@@ -30,6 +30,7 @@
               "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
               "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
@@ -38,13 +39,18 @@
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
 =======
 >>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
+=======
+>>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/chart.js/dist/Chart.js",
+=======
+>>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
 =======
 >>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
               "node_modules/hammerjs/hammer.min.js"
