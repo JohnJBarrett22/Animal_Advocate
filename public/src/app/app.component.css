@@ -30,6 +30,7 @@ a:hover {
 }
 #myFooter {
     height: 4rem;
+    margin-top: 2rem;
     background-color: #ce93d8;
 }
 .myButton {

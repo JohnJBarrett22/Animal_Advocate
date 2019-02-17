@@ -36,9 +36,13 @@ a:hover {
     background-color: #ce93d8;
     padding: 1rem;
     color: white;
+    margin-bottom: 2rem;
     border-radius: 1rem;
 }
 .white {
     color: white;
     vertical-align: middle;
+}
+.main {
+    margin-top: 3rem;
 }
