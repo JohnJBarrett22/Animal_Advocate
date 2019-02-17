@@ -57,15 +57,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HttpClientModule,
     NgbModule,
     ParallaxModule,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    MDBBootstrapModule.forRoot()
-=======
     MDBBootstrapModule,
->>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
-=======
-    MDBBootstrapModule,
->>>>>>> 4e8e4003acc8551953013ea3bd0b34f0a3caf0d7
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
