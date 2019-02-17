@@ -27,6 +27,7 @@ import { DogcareComponent } from './dogcare/dogcare.component';
 import { CatcareComponent } from './catcare/catcare.component';
 import { RescuesComponent } from './rescues/rescues.component';
 import { VideosComponent } from './videos/videos.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { VideosComponent } from './videos/videos.component';
     HttpClientModule,
     NgbModule,
     ParallaxModule,
+    MDBBootstrapModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
