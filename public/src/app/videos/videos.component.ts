@@ -11,24 +11,25 @@ export class VideosComponent implements OnInit {
 
   ngOnInit() {
     document.addEventListener("DOMContentLoaded", function() {
-      var div, n, v = document.getElementsByClassName("youtube-player");
+      let div, n, v = document.getElementsByClassName("youtube-player");
       for (n = 0; n < v.length; n++) {
         div = document.createElement("div");
         div.setAttribute("data-id", v[n].id);
-        div.innerHTML = labnolThumb(v[n].id);
-        div.onclick = labnolIframe;
+        div.setAttribute("class", "middleDiv");
+        div.innerHTML = loadThumbnail(v[n].id);
+        div.onclick = loadIframe;
         v[n].appendChild(div);
       }
     });
 
-    function labnolThumb(id) {
-        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">', play = '<div class="play"></div>';
-        return thumb.replace("ID", id) + play;
+    function loadThumbnail(id) {
+      let thumb = '<img class="thumbNail" src="https://i.ytimg.com/vi/ID/hqdefault.jpg">', play = '<div class="play"></div>';
+      return thumb.replace("ID", id) + play;
     }
 
-    function labnolIframe() {
-      var iframe = document.createElement("iframe");
-      var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+    function loadIframe() {
+      let iframe = document.createElement("iframe");
+      let embed = "https://www.youtube.com/embed/ID?autoplay=1";
       iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "1");
