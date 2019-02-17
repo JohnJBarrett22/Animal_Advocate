@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ParallaxModule, ParallaxConfig } from 'ngx-parallax';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ModalModule, TooltipModule, PopoverModule, ButtonsModule } from 'angular-bootstrap-md'
 
 import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
@@ -27,7 +29,7 @@ import { DogcareComponent } from './dogcare/dogcare.component';
 import { CatcareComponent } from './catcare/catcare.component';
 import { RescuesComponent } from './rescues/rescues.component';
 import { VideosComponent } from './videos/videos.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HttpClientModule,
     NgbModule,
     ParallaxModule,
-    MDBBootstrapModule,
+    MDBBootstrapModule.forRoot(),
+    ModalModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
