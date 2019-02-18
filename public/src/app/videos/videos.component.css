@@ -46,3 +46,11 @@ img {
 .main {
     margin-top: 3rem;
 }
+.myButton {
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: #f57c00;
+  }
