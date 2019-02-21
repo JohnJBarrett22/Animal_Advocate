@@ -12,132 +12,132 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col"></div>
-        <div id="form" class="col-6 main">
-          <ngb-tabset>
-            <ngb-tab>
-              <ng-template ngbTabTitle><b class="myTabs">Login</b></ng-template>
-              <ng-template ngbTabContent>
-                <!-- {{user | json }} -->
-                <form (submit)="login()">
-                  <!-- Row #3 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Email</label>
-                      <input type="email" class="form-control" id="validationServer001" name="user.email" [(ngModel)]="user.email" required>
-                      <div class="valid-feedback">
-                        Please provide a valid email.
-                      </div>
+      <div id="form" class="col-10 col-sm-6 main">
+        <ngb-tabset>
+          <ngb-tab>
+            <ng-template ngbTabTitle><b class="myTabs">Login</b></ng-template>
+            <ng-template ngbTabContent>
+              <!-- {{user | json }} -->
+              <form (submit)="login()">
+                <!-- Row #3 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Email</label>
+                    <input type="email" class="form-control" id="validationServer001" name="user.email" [(ngModel)]="user.email" required>
+                    <div class="valid-feedback">
+                      Please provide a valid email.
                     </div>
                   </div>
-        
-                  <!-- Row #5 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Password</label>
-                      <input type="password" class="form-control" id="validationServer002" name="user.password" [(ngModel)]="user.password" required>
-                      <div class="valid-feedback">
-                        Please provide a valid password.
-                      </div>
+                </div>
+      
+                <!-- Row #5 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Password</label>
+                    <input type="password" class="form-control" id="validationServer002" name="user.password" [(ngModel)]="user.password" required>
+                    <div class="valid-feedback">
+                      Please provide a valid password.
                     </div>
                   </div>
-        
-                  <button class="myButton" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
-                </form>
-                <p class="error" *ngFor="let e of errors">{{e}}</p>
-              </ng-template>
-            </ngb-tab>
-            <ngb-tab>
-              <ng-template ngbTabTitle><b class="myTabs">Register</b></ng-template>
-              <ng-template ngbTabContent>
-                <form (submit)="addUser()">
-                  <!-- Row #1 -->
-                  <!-- {{newUser | json }} -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">First Name</label>
-                      <input type="text" class="form-control" id="validationServer01" name="newUser.firstName" [(ngModel)]="newUser.firstName" required minlength="3" #firstName="ngModel">
-                      <span class="warning" *ngIf="newUser.firstName.length < 3">First name must be a minimum of 3 characters.</span>
-                      <div class="valid-feedback">
-                        Please provide a valid first name.
-                      </div>
+                </div>
+      
+                <button class="myButton" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+              </form>
+              <p class="error" *ngFor="let e of errors">{{e}}</p>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle><b class="myTabs">Register</b></ng-template>
+            <ng-template ngbTabContent>
+              <form (submit)="addUser()">
+                <!-- Row #1 -->
+                <!-- {{newUser | json }} -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">First Name</label>
+                    <input type="text" class="form-control" id="validationServer01" name="newUser.firstName" [(ngModel)]="newUser.firstName" required minlength="3" #firstName="ngModel">
+                    <span class="warning" *ngIf="newUser.firstName.length < 3">First name must be a minimum of 3 characters.</span>
+                    <div class="valid-feedback">
+                      Please provide a valid first name.
                     </div>
                   </div>
-        
-                  <!-- Row #2 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Last Name</label>
-                      <input type="text" class="form-control" id="validationServer02" name="newUser.lastName" [(ngModel)]="newUser.lastName" required minlength="3" #lastName="ngModel">
-                      <span class="warning" *ngIf="newUser.lastName.length < 3">Last name must be a minimum of 3 characters.</span>
-                      <div class="valid-feedback">
-                        Please provide a valid last name.
-                      </div>
+                </div>
+      
+                <!-- Row #2 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Last Name</label>
+                    <input type="text" class="form-control" id="validationServer02" name="newUser.lastName" [(ngModel)]="newUser.lastName" required minlength="3" #lastName="ngModel">
+                    <span class="warning" *ngIf="newUser.lastName.length < 3">Last name must be a minimum of 3 characters.</span>
+                    <div class="valid-feedback">
+                      Please provide a valid last name.
                     </div>
                   </div>
-        
-                  <!-- Row #3 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Email</label>
-                      <input type="text" class="form-control" id="validationServer03" name="newUser.email" [(ngModel)]="newUser.email" required minlength="9" #email="ngModel">
-                      <span class="warning" *ngIf="newUser.email.length < 9">Email must be a minimum of 9 characters.</span>
-                      <div class="valid-feedback">
-                        Please provide a valid email.
-                      </div>
+                </div>
+      
+                <!-- Row #3 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Email</label>
+                    <input type="text" class="form-control" id="validationServer03" name="newUser.email" [(ngModel)]="newUser.email" required minlength="9" #email="ngModel">
+                    <span class="warning" *ngIf="newUser.email.length < 9">Email must be a minimum of 9 characters.</span>
+                    <div class="valid-feedback">
+                      Please provide a valid email.
                     </div>
                   </div>
-        
-                  <!-- Row #4 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Oragnization</label>
-                      <input type="text" class="form-control" id="validationServer04" name="newUser.organization" [(ngModel)]="newUser.organization">
+                </div>
+      
+                <!-- Row #4 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Oragnization</label>
+                    <input type="text" class="form-control" id="validationServer04" name="newUser.organization" [(ngModel)]="newUser.organization">
+                  </div>
+                </div>
+      
+                <!-- Row #5 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Password</label>
+                    <input type="text" class="form-control" id="validationServer05" name="newUser.password" [(ngModel)]="newUser.password" required minlength="8" #password="ngModel">
+                    <span class="warning" *ngIf="newUser.password.length < 8">Password must be a minimum of 8 characters.</span>
+                    <div class="valid-feedback">
+                      Please provide a valid password.
                     </div>
                   </div>
-        
-                  <!-- Row #5 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Password</label>
-                      <input type="text" class="form-control" id="validationServer05" name="newUser.password" [(ngModel)]="newUser.password" required minlength="8" #password="ngModel">
-                      <span class="warning" *ngIf="newUser.password.length < 8">Password must be a minimum of 8 characters.</span>
-                      <div class="valid-feedback">
-                        Please provide a valid password.
-                      </div>
+                </div>
+                <!-- PASSWORD VALIDATIONS???? -->
+      
+                <!-- Row #6 -->
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Confirm Password</label>
+                    <input type="text" class="form-control" id="validationServer06" name="newUser.confirmPassword" [(ngModel)]="newUser.confirmPassword">
+                    <div class="valid-feedback">
+                      Please provide a valid password confirmation.
                     </div>
                   </div>
-                  <!-- PASSWORD VALIDATIONS???? -->
-        
-                  <!-- Row #6 -->
-                  <div class="form-row">
-                    <div class="col-md-12 mb-3">
-                      <label for="validationServer01">Confirm Password</label>
-                      <input type="text" class="form-control" id="validationServer06" name="newUser.confirmPassword" [(ngModel)]="newUser.confirmPassword">
-                      <div class="valid-feedback">
-                        Please provide a valid password confirmation.
-                      </div>
+                </div>
+      
+                <!-- Row #5 -->
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="agree" id="invalidCheck3" required>
+                    <label class="form-check-label" for="invalidCheck3">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
                     </div>
                   </div>
-        
-                  <!-- Row #5 -->
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="agree" id="invalidCheck3" required>
-                      <label class="form-check-label" for="invalidCheck3">
-                        Agree to terms and conditions
-                      </label>
-                      <div class="invalid-feedback">
-                        You must agree before submitting.
-                      </div>
-                    </div>
-                  </div>
-                  <button class="myButton" type="submit"><i class="fas fa-user-plus"></i> Register</button>
-                </form>
-                <p class="error" *ngFor="let e of errors">{{e}}</p>
-              </ng-template>
-            </ngb-tab>
-          </ngb-tabset>
-        </div>
+                </div>
+                <button class="myButton" type="submit"><i class="fas fa-user-plus"></i> Register</button>
+              </form>
+              <p class="error" *ngFor="let e of errors">{{e}}</p>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
       <div class="col"></div>
     </div>
 
