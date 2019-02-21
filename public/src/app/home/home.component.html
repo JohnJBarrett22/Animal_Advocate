@@ -36,24 +36,27 @@
         <h5>Thousands of animals are looking for an advocate. An advocate like you.</h5>
       </div>
     </div>
+
     <div class="row no-gutters">
-        <div class="col- col-md-1"></div>
-      <div class="col- col-md-10 sort">
+        <div class="col-1 col-md-1"></div>
+      <div class="col-10 col-md-10 sort">
         <h5><a class="white" [routerLink]="['/pets/dogs']"><i class="fas fa-dog"></i> Dogs</a> | <a class="white" [routerLink]="['/pets/cats']">Cats <i class="fas fa-cat"></i></a></h5>
       </div>
-      <div class="col- col-md-1"></div>
+      <div class="col-1 col-md-1"></div>
     </div>
-    <div class="card myCard col col-12 col-md-2 col-sm-12 col-lg-2" *ngFor="let p of allPets">
-      <a [routerLink]="['/pets', p._id]">
-      <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Image of {{p.petName}}">
-      <div class="card-body">
-        <h5 class="card-title">{{p.petName}}</h5>
-        <p class="card-text"></p>
-        <p class="card-text" *ngIf="p.petAge < 1">Puppy - {{p.petBreed}}</p>
-        <p class="card-text" *ngIf="p.petAge > 1 && p.petAge < 7">Adult - {{p.petBreed}}</p>
-        <p class="card-text" *ngIf="p.petAge >= 7">Senior - {{p.petBreed}}</p>
+    <div class="row">
+      <div class="card myCard col-10 col-md-2" *ngFor="let p of allPets">
+        <a [routerLink]="['/pets', p._id]">
+        <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Image of {{p.petName}}">
+        <div class="card-body">
+          <h5 class="card-title">{{p.petName}}</h5>
+          <p class="card-text"></p>
+          <p class="card-text" *ngIf="p.petAge < 1">Puppy - {{p.petBreed}}</p>
+          <p class="card-text" *ngIf="p.petAge > 1 && p.petAge < 7">Adult - {{p.petBreed}}</p>
+          <p class="card-text" *ngIf="p.petAge >= 7">Senior - {{p.petBreed}}</p>
+        </div>
+        </a>
       </div>
-      </a>
     </div>
 
   </div>
