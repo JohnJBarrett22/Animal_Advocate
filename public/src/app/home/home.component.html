@@ -45,6 +45,7 @@
       <div class="col-1 col-md-1"></div>
     </div>
     <div class="row">
+      <div class="col-1 col-md-1"></div>
       <div class="card myCard col-10 col-md-2" *ngFor="let p of allPets">
         <a [routerLink]="['/pets', p._id]">
         <img class="card-img-top myPic" [src]="p.petPictureLink" alt="Image of {{p.petName}}">
@@ -57,6 +58,7 @@
         </div>
         </a>
       </div>
+      <div class="col-1 col-md-1"></div>
     </div>
 
   </div>
